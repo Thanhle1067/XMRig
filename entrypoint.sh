@@ -1,19 +1,18 @@
 #!/bin/bash
 
-echo "=================================="
+echo "ENTRYPOINT WORKING"
 echo "ALGO=${ALGO}"
 echo "POOL=${POOL}"
 echo "WORKER=${WORKER}"
 echo "TLS=${TLS}"
-echo "=================================="
 
 if [ -z "$POOL" ]; then
-  echo "ERROR: POOL is empty"
+  echo "POOL is empty"
   exit 1
 fi
 
 if [ -z "$WALLET" ]; then
-  echo "ERROR: WALLET is empty"
+  echo "WALLET is empty"
   exit 1
 fi
 
