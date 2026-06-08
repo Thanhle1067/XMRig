@@ -2,6 +2,9 @@ name: Build XMRig
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -21,4 +24,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/xmrig:6.26.0
+          tags: |
+            thanh1502/xmrig:6.26.1
+            thanh1502/xmrig:latest
