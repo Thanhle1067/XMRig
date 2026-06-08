@@ -1,5 +1,7 @@
 FROM ubuntu:24.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y \
     git \
     build-essential \
@@ -7,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     libuv1-dev \
     libssl-dev \
     libhwloc-dev \
-    ca-certificates
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN git clone --depth 1 --branch v6.26.0 https://github.com/xmrig/xmrig.git
 
